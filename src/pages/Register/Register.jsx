@@ -67,8 +67,8 @@ export default function Register() {
     phone: Yup.string()
       .required('Phone number is required')
       .matches(
-        /^01[0-2|5]{1}[0-9]{8}$/,
-        'Phone number is not valid (123-456-7890)'
+        /^\+569[0-9]{8}$/,
+        'Phone number must be in the format +569XXXXXXXX'
       ),
   });
 
@@ -201,7 +201,7 @@ export default function Register() {
               onBlur={formik.handleBlur}
               value={formik.values.phone}
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
-              placeholder=" "
+              placeholder="+569XXXXXXXX"
             />
             <label
               htmlFor="phone"
